@@ -1,4 +1,4 @@
-class GracePDF < Formula
+class Gracepdf < Formula
   desc "WYSIWYG 2D plotting tool for X11 (with PDFLibLite 7"
   homepage "https://plasma-gate.weizmann.ac.il/Grace/"
   url "https://deb.debian.org/debian/pool/main/g/grace/grace_5.1.25.orig.tar.gz"
