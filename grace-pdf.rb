@@ -1,10 +1,9 @@
-class Gracepdf < Formula
-  desc "WYSIWYG 2D plotting tool for X11 (with PDFLibLite 7"
+class Grace < Formula
+  desc "WYSIWYG 2D plotting tool for X11 (with PDFLibLite 7)"
   homepage "https://plasma-gate.weizmann.ac.il/Grace/"
   url "https://deb.debian.org/debian/pool/main/g/grace/grace_5.1.25.orig.tar.gz"
   sha256 "751ab9917ed0f6232073c193aba74046037e185d73b77bab0f5af3e3ff1da2ac"
   license "GPL-2.0-only"
-  revision 5
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/g/grace/"
@@ -40,7 +39,9 @@ class Gracepdf < Formula
     ENV.O1 # https://github.com/Homebrew/homebrew/issues/27840#issuecomment-38536704
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     system "./configure", *std_configure_args,
-                          "--enable-grace-home=#{prefix}"
+                          "--enable-grace-home=#{prefix}",
+			  "--with-extra-incpath=/usr/local/Cellar/pdflib-lite/7.0.5p3/lib",
+			  "--with-extra-ldpath=/usr/local/Cellar/pdflib-lite/7.0.5p3/lib"
     system "make", "install"
     share.install "fonts", "examples"
     man1.install Dir["doc/*.1"]
