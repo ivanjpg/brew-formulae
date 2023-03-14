@@ -27,8 +27,8 @@ class GracePdf < Formula
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     system "./configure", *std_configure_args,
                           "--enable-grace-home=#{prefix}",
-        "--with-extra-incpath=/usr/local/Cellar/pdflib-lite/7.0.5p3/lib",
-        "--with-extra-ldpath=/usr/local/Cellar/pdflib-lite/7.0.5p3/lib"
+        "--with-extra-incpath=/usr/local/Cellar/pdflib-lite/7.0.5p3/include:/usr/local/Cellar/openmotif/2.3.8_2/include",
+        "--with-extra-ldpath=/usr/local/Cellar/pdflib-lite/7.0.5p3/lib:/usr/local/Cellar/openmotif/2.3.8_2/lib"
     system "make", "install"
     share.install "fonts", "examples"
     man1.install Dir["doc/*.1"]
