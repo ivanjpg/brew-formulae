@@ -4,6 +4,7 @@ class Grace < Formula
   url "https://deb.debian.org/debian/pool/main/g/grace/grace_5.1.25.orig.tar.gz"
   sha256 "751ab9917ed0f6232073c193aba74046037e185d73b77bab0f5af3e3ff1da2ac"
   license "GPL-2.0-only"
+  revision 5
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/g/grace/"
